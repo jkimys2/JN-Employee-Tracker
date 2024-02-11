@@ -189,6 +189,62 @@ const addRole = () => {
       });
     });
 };
+
+const addEmployee = () => {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "employeeFirst",
+        message: "What is the new employee's first name?",
+        validate: (roleInput) => {
+          if (roleInput) {
+            return true;
+          } else {
+            console.log("You must enter a name!");
+            return false;
+          }
+        },
+      },
+      {
+        type: "input",
+        name: "employeeLast",
+        message: "What is the new employee's last name?",
+        validate: (roleInput) => {
+          if (roleInput) {
+            return true;
+          } else {
+            console.log("You must enter a name!");
+            return false;
+          }
+        },
+      },
+      {
+        type: "list",
+        name: "employeeRole",
+        message: "What is the new employee's role?",
+        choices: [],
+      },
+      {
+        type: "list",
+        name: "employeeManager",
+        message: "Who is the new employee's manager?",
+        choices: [],
+      },
+    ])
+    .then(({ employeeFirst, employeeLast, employeeRole, employeeManager }) => {
+      const sql = "INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?);";
+      let params = employeeFirst, employeeLast, employeeRole, employeeManager;
+      db.query(sql, params, (err, result) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        viewAllEmployees();
+        mainPrompt();
+      });
+    });
+};
 // Function to exit prompts
 const exit = () => {
   console.log("Goodbye!");
