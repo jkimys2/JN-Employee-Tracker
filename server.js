@@ -15,25 +15,51 @@ const db = mysql.createConnection({
 db.connect((err) => {
   if (err) throw err;
   console.log(`Connected to the employees_db database!`);
+  mainPrompt();
 });
 
-// Inquirer
-
+// Inquirer prompts
 const mainPrompt = () => {
-  inquirer.prompt([
-    {
-      type: "list",
-      name: "mainPrompt",
-      message: "What would you like to do?",
-      choices: [
-        "View All Departments",
-        "View All Roles",
-        "View All Employess",
-        "Add a Department",
-        "Add a Role",
-        "Add an Employee",
-        "Update an Employee's Role"
-      ],
-    },
-  ]);
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "tracker",
+        message: "What would you like to do?",
+        choices: [
+          "View All Departments",
+          "View All Roles",
+          "View All Employess",
+          "Add a Department",
+          "Add a Role",
+          "Add an Employee",
+          "Update an Employee's Role",
+        ],
+      },
+    ])
+    .then((tracker) => {
+      switch (tracker) {
+        case "View All Departments":
+          viewAllDept();
+          break;
+        case "View All Roles":
+          viewAllDept();
+          break;
+        case "View All Employees":
+          viewAllDept();
+          break;
+        case "Add a Department":
+          viewAllDept();
+          break;
+        case "Add a Role":
+          viewAllDept();
+          break;
+        case "Add an Employee":
+          viewAllDept();
+          break;
+        case "Update an Employee's Role":
+          viewAllDept();
+          break;
+      }
+    });
 };
