@@ -83,7 +83,8 @@ const viewAllDept = () => {
 
 // Function to view all roles
 const viewAllRoles = () => {
-  const sql = "SELECT * FROM roles;";
+  const sql =
+    "SELECT roles.id, roles.title, department.department_name, roles.salary FROM roles LEFT JOIN department ON department.id = roles.department_id;";
   db.query(sql, (err, result) => {
     if (err) {
       console.log(err);
