@@ -34,10 +34,11 @@ const mainPrompt = () => {
           "Add a Role",
           "Add an Employee",
           "Update an Employee's Role",
+          "Exit",
         ],
       },
     ])
-    .then((tracker) => {
+    .then(({ tracker }) => {
       switch (tracker) {
         case "View All Departments":
           viewAllDept();
@@ -60,6 +61,15 @@ const mainPrompt = () => {
         case "Update an Employee's Role":
           updateEmployee();
           break;
+        case "Exit":
+          exit();
+          break;
       }
     });
 };
+
+const exit = () => {
+  console.log("Goodbye!");
+  process.exit();
+};
+
