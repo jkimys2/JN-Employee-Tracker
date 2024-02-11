@@ -108,7 +108,7 @@ const viewAllEmployees = () => {
   });
 };
 
-// Function to add a department
+// Function to add a new department
 const addDept = () => {
   inquirer
     .prompt({
@@ -133,6 +133,57 @@ const addDept = () => {
           return;
         }
         viewAllDept();
+        mainPrompt();
+      });
+    });
+};
+
+// Function to add a new role
+const addRole = () => {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "newRole",
+        message: "Please enter the job title you would like to add:",
+        validate: (roleInput) => {
+          if (roleInput) {
+            return true;
+          } else {
+            console.log("You must enter a job title!");
+            return false;
+          }
+        },
+      },
+      {
+        type: "input",
+        name: "newRoleSalary",
+        message: "What is the salary of the role?",
+        validate: (salaryInput) => {
+          if (salaryInput) {
+            return true;
+          } else {
+            console.log("You must enter a salary for this role!");
+            return false;
+          }
+        },
+      },
+      {
+        type: "list",
+        name: "newRoleDept",
+        message: "Which department does this role belong to?",
+        choices: [],
+      },
+    ])
+    .then(({ newRole }) => {
+      const sql = "INSERT INTO roles (title, salary) VALUES (?);";
+      const params = newRole;
+      db.query(sql, params, (err, result) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        viewAllRoles();
         mainPrompt();
       });
     });
