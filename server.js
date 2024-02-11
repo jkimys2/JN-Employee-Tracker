@@ -68,8 +68,10 @@ const mainPrompt = () => {
     });
 };
 
+
+
+// Function to exit prompts
 const exit = () => {
   console.log("Goodbye!");
   process.exit();
 };
-
