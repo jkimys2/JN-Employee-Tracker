@@ -110,27 +110,33 @@ const viewAllEmployees = () => {
 
 // Function to add a department
 const addDept = () => {
-  inquirer.prompt({
-    type: "input",
-    name: "newDept",
-    message: "Please enter the department name you would like to add:",
-    validate: (deptInput) => {
-      if (deptInput) {
-        return true;
-      } else {
-        console.log("You must enter a department name!");
-        return false;
-      }
-    }
-  })
-  .then(({newDept}) => {
-    const sql = "INSERT INTO department (department_name) VALUES (?);";
-    const params = newDept;
-    db.query(sql, params, (err, result) => {
-
+  inquirer
+    .prompt({
+      type: "input",
+      name: "newDept",
+      message: "Please enter the department name you would like to add:",
+      validate: (deptInput) => {
+        if (deptInput) {
+          return true;
+        } else {
+          console.log("You must enter a department name!");
+          return false;
+        }
+      },
     })
-  })
-}
+    .then(({ newDept }) => {
+      const sql = "INSERT INTO department (department_name) VALUES (?);";
+      const params = newDept;
+      db.query(sql, params, (err, result) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        viewAllDept();
+        mainPrompt();
+      });
+    });
+};
 // Function to exit prompts
 const exit = () => {
   console.log("Goodbye!");
