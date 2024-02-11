@@ -29,7 +29,7 @@ const mainPrompt = () => {
         choices: [
           "View All Departments",
           "View All Roles",
-          "View All Employess",
+          "View All Employees",
           "Add a Department",
           "Add a Role",
           "Add an Employee",
@@ -70,20 +70,33 @@ const mainPrompt = () => {
 
 // Function to view all the departments
 const viewAllDept = () => {
-    const sql = "SELECT * FROM department;";
-    db.query(sql, (err, result) => {
-      if (err) {
-        console.log(err);
-        return;
-      }
-      console.table(result);
-      mainPrompt();
-    });
-  };
+  const sql = "SELECT * FROM department;";
+  db.query(sql, (err, result) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.table(result);
+    mainPrompt();
+  });
+};
 
 // Function to view all roles
 const viewAllRoles = () => {
   const sql = "SELECT * FROM roles;";
+  db.query(sql, (err, result) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.table(result);
+    mainPrompt();
+  });
+};
+
+// Function to view all employees
+const viewAllEmployees = () => {
+  const sql = "SELECT * FROM employee;";
   db.query(sql, (err, result) => {
     if (err) {
       console.log(err);
