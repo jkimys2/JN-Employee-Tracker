@@ -96,7 +96,8 @@ const viewAllRoles = () => {
 
 // Function to view all employees
 const viewAllEmployees = () => {
-  const sql = "SELECT * FROM employee;";
+  const sql =
+    "SELECT employee.id AS employee_id, employee.first_name, employee.last_name, roles.title AS job_title, department.department_name AS department, roles.salary, employee.manager_id AS manager FROM employee LEFT JOIN roles ON employee.role_id = roles.id LEFT JOIN department ON roles.department_id = department.id;";
   db.query(sql, (err, result) => {
     if (err) {
       console.log(err);
