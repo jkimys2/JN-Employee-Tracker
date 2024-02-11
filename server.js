@@ -14,7 +14,7 @@ const db = mysql.createConnection({
 // Connect to database
 db.connect((err) => {
   if (err) throw err;
-  console.log(`Connected to the employees_db database!`);
+  console.log(`Now connected to the Employee Tracker!`);
   mainPrompt();
 });
 
