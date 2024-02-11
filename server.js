@@ -68,8 +68,20 @@ const mainPrompt = () => {
     });
 };
 
+// Function to view all the departments
+const viewAllDept = () => {
+    const sql = "SELECT * FROM department;";
+    db.query(sql, (err, result) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      console.table(result);
+      mainPrompt();
+    });
+  };
 
-
+ 
 // Function to exit prompts
 const exit = () => {
   console.log("Goodbye!");
