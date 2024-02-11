@@ -43,22 +43,22 @@ const mainPrompt = () => {
           viewAllDept();
           break;
         case "View All Roles":
-          viewAllDept();
+          viewAllRoles();
           break;
         case "View All Employees":
-          viewAllDept();
+          viewAllEmployees();
           break;
         case "Add a Department":
-          viewAllDept();
+          addDept();
           break;
         case "Add a Role":
-          viewAllDept();
+          addRole();
           break;
         case "Add an Employee":
-          viewAllDept();
+          addEmployee();
           break;
         case "Update an Employee's Role":
-          viewAllDept();
+          updateEmployee();
           break;
       }
     });
