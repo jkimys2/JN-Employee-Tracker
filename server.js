@@ -81,7 +81,19 @@ const viewAllDept = () => {
     });
   };
 
- 
+// Function to view all roles
+const viewAllRoles = () => {
+  const sql = "SELECT * FROM roles;";
+  db.query(sql, (err, result) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.table(result);
+    mainPrompt();
+  });
+};
+
 // Function to exit prompts
 const exit = () => {
   console.log("Goodbye!");
