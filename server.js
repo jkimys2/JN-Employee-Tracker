@@ -133,7 +133,7 @@ const addDept = () => {
           console.log(err);
           return;
         }
-        console.log(`Added ${newDept} to the database!`)
+        console.log(`Added ${newDept} to the database!`);
         viewAllDept();
         mainPrompt();
       });
@@ -188,7 +188,7 @@ const addRole = () => {
           console.log(err);
           return;
         }
-        console.log(`Added ${newRole} to the database!`)
+        console.log(`Added ${newRole} to the database!`);
         viewAllRoles();
         mainPrompt();
       });
@@ -250,7 +250,7 @@ const addEmployee = () => {
           console.log(err);
           return;
         }
-        console.log(`Added ${employeeFirst} ${employeeLast} to the database!`)
+        console.log(`Added ${employeeFirst} ${employeeLast} to the database!`);
         viewAllEmployees();
         mainPrompt();
       });
@@ -259,20 +259,38 @@ const addEmployee = () => {
 
 // Function to update an employee
 const updateEmployee = () => {
-  inquirer.prompt([
-    {
-      type: "list",
-      name: "updateEmployee",
-      message: "Which employee would you like to update?",
-      choices: [],
-    },
-    {
-      type: "list",
-      name: "updateRole",
-      message: "What role would you like to assign the selected employee?",
-      choices: [],
-    },
-  ]);
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "updatedEmployee",
+        message: "Which employee would you like to update?",
+        choices: [],
+      },
+      {
+        type: "list",
+        name: "updatedRole",
+        message: "What role would you like to assign the selected employee?",
+        choices: [],
+      },
+    ])
+    .then(({ updatedEmployee, updatedRole }) => {
+      const sql =
+        "INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?);";
+      let params = updatedEmployee,
+        updatedRole;
+      db.query(sql, params, (err, result) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        console.log(
+          `Updated ${updatedEmployee} to the ${updatedRole} position!`
+        );
+        viewAllEmployees();
+        mainPrompt();
+      });
+    });
 };
 
 // Function to exit prompts
