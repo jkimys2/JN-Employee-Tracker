@@ -133,6 +133,7 @@ const addDept = () => {
           console.log(err);
           return;
         }
+        console.log(`Added ${newDept} to the database!`)
         viewAllDept();
         mainPrompt();
       });
@@ -177,19 +178,24 @@ const addRole = () => {
       },
     ])
     .then(({ newRole, newRoleSalary, newRoleDept }) => {
-      const sql = "INSERT INTO roles (title, salary, department_id) VALUES (?, ?, ?);";
-      let params = newRole, newRoleSalary, newRoleDept;
+      const sql =
+        "INSERT INTO roles (title, salary, department_id) VALUES (?, ?, ?);";
+      let params = newRole,
+        newRoleSalary,
+        newRoleDept;
       db.query(sql, params, (err, result) => {
         if (err) {
           console.log(err);
           return;
         }
+        console.log(`Added ${newRole} to the database!`)
         viewAllRoles();
         mainPrompt();
       });
     });
 };
 
+// Function to add a new employee
 const addEmployee = () => {
   inquirer
     .prompt([
@@ -233,18 +239,42 @@ const addEmployee = () => {
       },
     ])
     .then(({ employeeFirst, employeeLast, employeeRole, employeeManager }) => {
-      const sql = "INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?);";
-      let params = employeeFirst, employeeLast, employeeRole, employeeManager;
+      const sql =
+        "INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?);";
+      let params = employeeFirst,
+        employeeLast,
+        employeeRole,
+        employeeManager;
       db.query(sql, params, (err, result) => {
         if (err) {
           console.log(err);
           return;
         }
+        console.log(`Added ${employeeFirst} ${employeeLast} to the database!`)
         viewAllEmployees();
         mainPrompt();
       });
     });
 };
+
+// Function to update an employee
+const updateEmployee = () => {
+  inquirer.prompt([
+    {
+      type: "list",
+      name: "updateEmployee",
+      message: "Which employee would you like to update?",
+      choices: [],
+    },
+    {
+      type: "list",
+      name: "updateRole",
+      message: "What role would you like to assign the selected employee?",
+      choices: [],
+    },
+  ]);
+};
+
 // Function to exit prompts
 const exit = () => {
   console.log("Goodbye!");
