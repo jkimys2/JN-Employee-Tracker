@@ -176,9 +176,9 @@ const addRole = () => {
         choices: [],
       },
     ])
-    .then(({ newRole }) => {
-      const sql = "INSERT INTO roles (title, salary) VALUES (?);";
-      const params = newRole;
+    .then(({ newRole, newRoleSalary, newRoleDept }) => {
+      const sql = "INSERT INTO roles (title, salary, department_id) VALUES (?, ?, ?);";
+      let params = newRole, newRoleSalary, newRoleDept;
       db.query(sql, params, (err, result) => {
         if (err) {
           console.log(err);
