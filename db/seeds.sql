@@ -16,7 +16,7 @@ VALUES
     ("Senior Attorney", "175000", 3),
     ("Junior Attorney", "130000", 3),
     ("Sales Manager", "100000", 4),
-    ("Sales Associate", "75000", 4);
+    ("Sales Associate", "85000", 4);
 
 INSERT INTO
     employee (first_name, last_name, role_id, manager_id)
