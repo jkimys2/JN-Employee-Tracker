@@ -1,6 +1,14 @@
 # JN-Employee-Tracker
 
 
+## Table of Contents
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [Links](#links)
+
+
 ## Description
 
 Through this project, I was able to create a command-line application that helps users manage their employee database. It allows users to navigate through their employee database, view information, and even add and/or modify data! This challenge was completed by following the acceptance criterias listed below:
@@ -31,13 +39,6 @@ This project was completed with Node.js, Inquirer, and MySQL2. It was created in
 This project did not come with any starter code. Everything in this application was built from scratch!
 
 
-## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [Links](#links)
-
-
 ## Installation
 
 In order to navigate through the employee database, you will need the following:
@@ -49,6 +50,15 @@ In order to navigate through the employee database, you will need the following:
 
 ## Usage
 
-Once you have the file in VS Code, you will need to install the dependencies by running ```npm install``` in the integrated terminal.
+Once you have the file in VS Code, you will need to install the dependencies by 
+running ```npm install``` in the integrated terminal.
 
-In order to navigate through the employees database, you will need to open the integrated terminal. From there, you will type ```node server.js``` to run the file. Once you do so, you will be connected to the database. 
+
+In order to navigate through the employees database, you will need to open the integrated terminal. From there, you will type ```node server.js``` to run the file. Once you do so, you will be connected to the database, and you will be able to navigate through the different options. You can view all of the departments, view all ofthe roles in the departments, view all of the employees, add a department, role, or employee, or even update an employee's role! Finally, you can exit the database by choosing the exit option.
+
+Here is a snippet on how this application works:
+![gif]()
+
+## Credits
+
+Thank you Chris B. for all your help! 😊👍
