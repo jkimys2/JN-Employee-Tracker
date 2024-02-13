@@ -189,9 +189,6 @@ const addRole = () => {
       .then(({ newRole, newRoleSalary, newRoleDept }) => {
         const sql =
           "INSERT INTO roles (title, salary, department_id) VALUES (?, ?, ?);";
-        // let params = newRole,
-        //   newRoleSalary,
-        //   newRoleDept;
         db.query(sql, [newRole, newRoleSalary, newRoleDept], (err, result) => {
           if (err) {
             console.log(err);
@@ -275,10 +272,6 @@ const addEmployee = () => {
           ({ employeeFirst, employeeLast, employeeRole, employeeManager }) => {
             const sql =
               "INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?);";
-            // let params = employeeFirst,
-            //   employeeLast,
-            //   employeeRole,
-            //   employeeManager;
             db.query(
               sql,
               [employeeFirst, employeeLast, employeeRole, employeeManager],
@@ -362,5 +355,5 @@ const updateEmployee = () => {
 // Function to exit prompts
 const exit = () => {
   console.log("Goodbye!");
-  process.exit();
+  process.exit(0);
 };
