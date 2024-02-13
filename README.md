@@ -59,6 +59,13 @@ In order to navigate through the employees database, you will need to open the i
 Here is a snippet on how this application works:
 ![gif]()
 
+
 ## Credits
 
 Thank you Chris B. for all your help! 😊👍
+
+
+## Links
+
+[GitHub Repository]()
+[Walkthrough Video]()
