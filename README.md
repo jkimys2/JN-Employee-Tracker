@@ -42,4 +42,13 @@ This project did not come with any starter code. Everything in this application 
 
 In order to navigate through the employee database, you will need the following:
 
--
+- Visual Studio Code <br>
+- Node.js <br>
+- And you will need to install the dependencies in the package.json file!
+
+
+## Usage
+
+Once you have the file in VS Code, you will need to install the dependencies by running ```npm install``` in the integrated terminal.
+
+In order to navigate through the employees database, you will need to open the integrated terminal. From there, you will type ```node server.js``` to run the file. Once you do so, you will be connected to the database. 
