@@ -56,9 +56,6 @@ running ```npm install``` in the integrated terminal.
 
 In order to navigate through the employees database, you will need to open the integrated terminal. From there, you will type ```node server.js``` to run the file. Once you do so, you will be connected to the database, and you will be able to navigate through the different options. You can view all of the departments, view all of the roles in the departments, view all of the employees, add a department, role, or employee, or even update an employee's role! Finally, you can exit the database by choosing the exit option.
 
-Here is a snippet on how this application works:
-![gif]()
-
 
 ## Credits
 
@@ -67,5 +64,5 @@ Thank you Chris B. for all your help! 😊👍
 
 ## Links
 
-[GitHub Repository]() <br>
-[Walkthrough Video]()
+[GitHub Repository](https://github.com/jkimys2/JN-Employee-Tracker) <br>
+[Walkthrough Video](https://drive.google.com/file/d/1DwYIdkc15ediyaNsHvdls2ieOfw72bF5/view)
