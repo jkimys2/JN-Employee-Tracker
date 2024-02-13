@@ -196,6 +196,7 @@ const addRole = () => {
               console.log(err);
               return;
             }
+            console.log(`${newRole} has been added!`)
             viewAllRoles();
           }
         );
@@ -205,15 +206,13 @@ const addRole = () => {
 
 // Function to add a new employee
 const addEmployee = () => {
-  const roleSql =
-    "SELECT * FROM roles;";
+  const roleSql = "SELECT * FROM roles;";
   db.query(roleSql, (err, roles) => {
     if (err) {
       console.log(err);
       return;
     }
-    const employeeSql =
-      "SELECT * FROM employee;";
+    const employeeSql = "SELECT * FROM employee;";
     db.query(employeeSql, (err, employees) => {
       if (err) {
         console.log(err);
@@ -282,6 +281,7 @@ const addEmployee = () => {
                   console.log(err);
                   return;
                 }
+                console.log(`${employeeFirst} ${employeeLast} was added!`);
                 viewAllEmployees();
               }
             );
@@ -337,9 +337,7 @@ const updateEmployee = () => {
               console.log(err);
               return;
             }
-            console.log(
-              `Updated ${updatedEmployee} to the ${updatedRole} position!`
-            );
+            console.log(`Employee updated!`);
             viewAllEmployees();
           });
         });
