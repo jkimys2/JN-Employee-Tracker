@@ -204,16 +204,16 @@ const addRole = () => {
 
 // Function to add a new employee
 const addEmployee = () => {
-  const sql =
+  const roleSql =
     "SELECT roles.id, roles.title, department.department_name, roles.salary FROM roles LEFT JOIN department ON department.id = roles.department_id;";
-  db.query(sql, (err, roles) => {
+  db.query(roleSql, (err, roles) => {
     if (err) {
       console.log(err);
       return;
     }
-    const sql =
+    const employeeSql =
       "SELECT employee.id AS employee_id, employee.first_name, employee.last_name, roles.title AS job_title, department.department_name AS department, roles.salary, employee.manager_id AS manager FROM employee LEFT JOIN roles ON employee.role_id = roles.id LEFT JOIN department ON roles.department_id = department.id;";
-    db.query(sql, (err, employees) => {
+    db.query(employeeSql, (err, employees) => {
       if (err) {
         console.log(err);
         return;
