@@ -23,9 +23,9 @@ INSERT INTO
 VALUES
     ("Miranda", "Bailey", 5, null),
     ("Meredith", "Grey", 1, null),
-    ("Alex", "Karev", 8, 7),
-    ("George", "O'Malley", 6, 1),
-    ("Derek", "Shepherd", 4, 8),
-    ("Izzie", "Stephens", 2, 2),
     ("Richard", "Webber", 7, null),
-    ("Christina", "Yang", 3, null);
+    ("Christina", "Yang", 3, null),
+    ("Alex", "Karev", 8, 3),
+    ("George", "O'Malley", 6, 1),
+    ("Derek", "Shepherd", 4, 4),
+    ("Izzie", "Stephens", 2, 2);
