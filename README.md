@@ -59,10 +59,10 @@ In order to navigate through the employees database, you will need to open the i
 
 ## Credits
 
-Thank you Chris B. for all your help! 😊👍
+Thank you Andrew B., Chris B., and Michael H. for all your help! 😊👍
 
 
 ## Links
 
 [GitHub Repository](https://github.com/jkimys2/JN-Employee-Tracker) <br>
-[Walkthrough Video](https://drive.google.com/file/d/1DwYIdkc15ediyaNsHvdls2ieOfw72bF5/view)
+[Walkthrough Video](https://drive.google.com/file/d/1IWnKJnhc2rklvyrOpv8KQ5Qyy3Oh1txa/view)
